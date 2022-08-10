@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     SUBMIT_BUTTON = (By.CSS_SELECTOR, "button.btn.btn-lg.btn-primary.btn-add-to-basket")  # "button[value='Добавить в корзину']")
-    NOT_ELEMENT = (By.CSS_SELECTOR, '[name="login_submit"]')
-    IS_DISAPPEARED = (By.CSS_SELECTOR, '[name="login_submit"]')
+    NOT_ELEMENT = (By.CSS_SELECTOR, '#messages strong')
+    IS_DISAPPEARED = (By.CSS_SELECTOR, '#messages strong')
 
 
 class LoginPageLocators():
