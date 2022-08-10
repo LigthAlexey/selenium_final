@@ -20,3 +20,12 @@ class SubmitPage(BasePage):
         product_cost = self.browser.find_element(*SubmitPageLocators.PRODUCT_COST).text
         product_cost_sale = self.browser.find_element(*SubmitPageLocators.PRODUCT_COST_SALE).text
         assert product_cost == product_cost_sale, "Цена не соответствуют"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*MainPageLocators.NOT_ELEMENT), \
+            "Элемент присутствует, но не должен быть"
+
+    def should_be_disappeared(self):
+        assert self.is_not_element_present(*MainPageLocators.IS_DISAPPEARED), \
+            "Элемент не исчез, а должен"
+
