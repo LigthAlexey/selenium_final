@@ -38,6 +38,7 @@ class LoginPage(BasePage):
         button_pass = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
         button_pass.click()
 
+
         # Для проверки если нужно, по условию задания нет...
         '''try:
             WebDriverWait(self.browser, 10).until(
