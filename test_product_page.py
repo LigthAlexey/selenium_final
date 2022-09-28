@@ -1,5 +1,7 @@
 import pytest
 from .pages.product_page import SubmitPage
+from .pages.login_page import LoginPage
+from .pages.main_page import MainPage
 
 
 # Короткий вариант без xfail от Vladimir Danilyuk
@@ -26,6 +28,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_cost()
 
 
+#@pytest.mark.skip
 @pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
@@ -36,6 +39,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.should_not_be_success_message()
 
 
+#@pytest.mark.skip
 def test_guest_cant_see_success_message(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
     page = SubmitPage(browser, link)
@@ -44,6 +48,7 @@ def test_guest_cant_see_success_message(browser):
     page.should_not_be_success_message()
 
 
+#@pytest.mark.skip
 @pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
@@ -52,3 +57,12 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.should_be_submit_link()
     page.go_to_submit_page()
     page.should_be_disappeared()
+
+
+def test_guest_can_go_to_login_page(browser):
+    link = "http://selenium1py.pythonanywhere.com"
+    page = MainPage(browser, link)
+    page.open()
+    page.go_to_login_page()
+    login_page = LoginPage(browser, browser.current_url)
+    login_page.should_be_login_page()

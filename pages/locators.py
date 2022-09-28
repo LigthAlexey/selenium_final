@@ -9,8 +9,8 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    REGISTER_LINK = (By.CSS_SELECTOR, '[name="registration_submit"]')
-    LOGIN_LINK = (By.CSS_SELECTOR, '[name="login_submit"]')
+    REGISTER_BUTTON = (By.CSS_SELECTOR, '[name="registration_submit"]')
+    LOGIN_BUTTON = (By.CSS_SELECTOR, '[name="login_submit"]')
 
 
 class SubmitPageLocators():
